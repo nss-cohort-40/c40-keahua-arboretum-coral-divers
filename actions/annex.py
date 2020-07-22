@@ -1,12 +1,15 @@
 import os
 from environments import River
 
+
 def annex_habitat(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
     print("1. River")
     print("2. Swamp")
     print("3. Coastline")
     print("4. Grassland")
+    print("5. Forest")
+    print("6. Mountain")
 
     choice = input("Choose your habitat > ")
 
