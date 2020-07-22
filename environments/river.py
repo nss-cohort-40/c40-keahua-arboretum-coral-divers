@@ -11,6 +11,9 @@ class River(ContainsAnimals, ContainsPlants, Identifiable):
         ContainsAnimals.__init__(self)
         ContainsPlants.__init__(self)
         Identifiable.__init__(self)
+        self.plant_capacity = 6
+        self.animal_capacity = 12
+        self.characteristics = ["fresh water"]
 
     def add_animal(self, animal):
         try:
