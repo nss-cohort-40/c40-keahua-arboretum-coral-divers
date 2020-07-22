@@ -1,4 +1,5 @@
 class ContainsAnimals():
 
     def __init__(self):
-        self.animals = []
+        # self.animals = []
+        pass
