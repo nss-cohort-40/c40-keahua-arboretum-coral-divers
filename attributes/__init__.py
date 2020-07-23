@@ -8,3 +8,5 @@ from .saltwater import Saltwater
 from .swimming import Swimming
 from .terrestrial import Terrestrial
 from .walking import Walking
+from .mammal import Mammal
+from .reptile import Reptile
