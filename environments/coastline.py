@@ -10,4 +10,4 @@ class Coastline(Biome):
             if animal.aquatic and animal.cell_type == "hypotonic":
                 self.animals.append(animal)
         except AttributeError:
-            raise AttributeError("Cannot add non-saltwater fish to a coastline")
+            raise AttributeError("Cannot add a terrestrial animal or a freshwater aquatic animal to a coastline")
