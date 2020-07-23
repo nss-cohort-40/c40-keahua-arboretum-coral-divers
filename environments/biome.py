@@ -1,6 +1,9 @@
+from attributes import Identifiable
+
 class Biome:
 
     def __init__(self, name, capacity_animal, capacity_plant):
+        Identifiable.__init__(self)
         self.name = name
         self.capacity_animal = capacity_animal
         self.capacity_plant = capacity_plant
