@@ -6,20 +6,17 @@ from animals import Identifiable
 class RiverDolphin(Animal, Freshwater, Identifiable):
 
     def __init__(self):
-        Animal.__init__(self, "River dolphin")
+        Animal.__init__(self, "River dolphin", {
+                        "Trout", "Mackarel", "Salmon", "Sardine"}, {"River", "Coastline"}, 13)
         Freshwater.__init__(self)
         Identifiable.__init__(self)
-        self.__prey = {"Trout", "Mackarel", "Salmon", "Sardine"}
-        self.species = "River dolphin"
-        self.location = ["River", "Coastline"]
-        self.minimum_release_age = 13
 
-    @property
-    def prey(self):
-        return self.__prey
+    # @property
+    # def prey(self):
+    #     return self.prey
 
     def feed(self, prey):
-        if prey in self.__prey:
+        if prey in self.prey:
             print(f'The dolphin ate {prey} for a meal')
         else:
             print(f'The dolphin rejects the {prey}')
