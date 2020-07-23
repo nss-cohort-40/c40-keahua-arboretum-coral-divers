@@ -1,8 +1,6 @@
-# from animals import Aquatic
-from animals import Identifiable
-from .contains_animals import ContainsAnimals
-from .contains_plants import ContainsPlants
-# from animals import RiverDolphin
+from attributes import Identifiable
+from attributes import ContainsAnimals
+from attributes import ContainsPlants
 
 
 class River(ContainsAnimals, ContainsPlants, Identifiable):
