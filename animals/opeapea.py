@@ -1,4 +1,3 @@
-
 from animals import Animal
 from attributes import Flying
 from attributes import Terrestrial
