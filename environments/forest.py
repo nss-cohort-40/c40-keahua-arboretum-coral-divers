@@ -1,10 +1,9 @@
-from attributes import Identifiable
 from attributes import ContainsAnimals
 from attributes import ContainsPlants
 from attributes import Flying
 
 
-class Forest(Identifiable):
+class Forest():
 
     def __init__(self):
         ContainsAnimals.__init__(self)

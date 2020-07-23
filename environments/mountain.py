@@ -1,9 +1,8 @@
-from animals import Identifiable
 from .contains_animals import ContainsAnimals
 from .contains_plants import ContainsPlants
 
 
-class Mountain(Identifiable, ContainsAnimals, ContainsPlants):
+class Mountain(ContainsAnimals, ContainsPlants):
 
     def __init__(self):
         Identifiable.__init__(self)
