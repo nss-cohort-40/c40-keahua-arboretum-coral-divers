@@ -8,3 +8,4 @@ from .saltwater import Saltwater
 from .swimming import Swimming
 from .terrestrial import Terrestrial
 from .walking import Walking
+from .stagnant import Stagnant
