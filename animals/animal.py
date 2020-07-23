@@ -1,8 +1,10 @@
 import random
+from attributes import Identifiable
 
-class Animal:
+class Animal(Identifiable):
 
     def __init__(self, species, prey, location, minimum_release_age):
+        Identifiable.__init__(self)
         self.__species = species
         self.__prey = prey
         self.__location = location
