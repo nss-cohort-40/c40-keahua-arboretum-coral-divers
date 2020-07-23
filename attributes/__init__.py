@@ -9,3 +9,5 @@ from .swimming import Swimming
 from .terrestrial import Terrestrial
 from .walking import Walking
 from .stagnant import Stagnant
+from .mammal import Mammal
+from .reptile import Reptile
