@@ -1,17 +1,11 @@
-from attributes import Identifiable
-from attributes import ContainsAnimals
-from attributes import ContainsPlants
+from .biome import Biome
 
 
-class River(ContainsAnimals, ContainsPlants, Identifiable):
+class River(Biome):
 
     def __init__(self):
-        ContainsAnimals.__init__(self)
-        ContainsPlants.__init__(self)
-        Identifiable.__init__(self)
-        self.plant_capacity = 6
-        self.animal_capacity = 12
-        self.characteristics = ["fresh water"]
+        Biome.__init__(self, "River", 6, 12, "Fresh Water")
+        
 
     def add_animal(self, animal):
         try:

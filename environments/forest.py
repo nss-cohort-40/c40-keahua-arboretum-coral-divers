@@ -1,17 +1,13 @@
-from attributes import ContainsAnimals
-from attributes import ContainsPlants
+from .biome import Biome
 from attributes import Flying
 
 
-class Forest():
+class Forest(Biome, Flying):
 
     def __init__(self):
-        ContainsAnimals.__init__(self)
-        ContainsPlants.__init__(self)
-        Identifiable.__init__(self)
-        self.plant_capacity = 32
-        self.animal_capacity = 20
-        self.characteristics = ["rainy", "shady"]
+        Biome.__init__(self, "Forest", 32, 20, {"Rainy", "Shady"})
+        Flying.__init__(self)
+       
 
     def add_animal(self, animal):
         try:
