@@ -1,6 +1,15 @@
+from animals import GoldDustDayGecko
+from animals import HappyFacedSpider
+from animals import Kikakapu
+from animals import NeneGoose
+from animals import Opeapea
+from animals import Pueo
+from animals import RiverDolphin
+from animals import Ulae
 
 
 def feed_animal(arboretum):
+    animal = None
 
     print("-------------------------------")
     print("1. Pueo")
@@ -15,8 +24,40 @@ def feed_animal(arboretum):
     print("Choose animal to feed.")
     choice = input("> ")
 
-    if choice == "1":
-        
+    # if choice == "1":
+    #     pueo = Pueo().__dict__
+    #     for index, item in enumerate(pueo.):
+    #         print(f"{index + 1}. {item}")
+    if choice == "2":
+        river_dolphin = RiverDolphin.__dict__
+        for index, item in enumerate(river_dolphin.items()):
+            print(f"{index + 1}. {item}")
+            print("What would you like to feed the dolphins today?")
+            choice = input("> ")
+    if choice == "3":
+        animal = Ulae()
+        for index, item in enumerate(Ulae.Animal.__prey):
+            print(f"{index + 1}. {item}")
+    if choice == "4":
+        animal = GoldDustDayGecko()
+        for index, item in enumerate(GoldDustDayGecko.Animal.__prey):
+            print(f"{index + 1}. {item}")
+    if choice == "5":
+        animal = NeneGoose()
+        for index, item in enumerate(NeneGoose.Animal.__prey):
+            print(f"{index + 1}. {item}")
+    if choice == "6":
+        animal = Kikakapu()
+        for index, item in enumerate(Kikakapu.Animal.__prey):
+            print(f"{index + 1}. {item}")
+    if choice == "7":
+        animal = Opeapea()
+        for index, item in enumerate(Opeapea.Animal.__prey):
+            print(f"{index + 1}. {item}")
+    if choice == "8":
+        animal = HappyFacedSpider()
+        for index, item in enumerate(Opeapea.Animal.__prey):
+            print(f"{index + 1}. {item}")
 
     # for index, animal in enumerate(arboretum.animals):
     #     print(f"{index + 1}. {animal}")
