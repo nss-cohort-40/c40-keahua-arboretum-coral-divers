@@ -7,6 +7,7 @@ class MountainAppleTree(Plant, Terrestrial):
         Terrestrial.__init__(self)
 
     def __str__(self):
-        return f"{self.species} ({str(self.id)[:8]})"
+        return f"{self.species} [{self.id}]"
 
     
+

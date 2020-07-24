@@ -8,48 +8,60 @@ def add_plant(Arboretum):
     
    plant = None
 
+   print("")
    print("1. Mountain Apple Tree")
    print("2. Silversword")
    print("3. Rainbow Eucalyptus Tree")
    print("4. Blue Jade Vine")
+   print("")
 
    choice = input("Choose plant to cultivate > ")
 
    if choice == "1":
        plant = MountainAppleTree()
+       print("")
        print(plant)
-       input("\n\nPress enter to continue...")
-    #    pass
-
+       
+       input("Press enter to continue...")
+      
    if choice == "2":
         plant = Silversword()
+        print("")
         print(plant)
-        
+        input("Press enter to continue...")
 
    if choice == "3":
-        # plant RainbowEucalyptusTree()
-        pass
+        plant = RainbowEucalyptusTree()
+        print("")
+        print(plant)
+        input("Press enter to continue...")
 
    if choice == "4":
-        # plant = BlueJadeVine()
-        pass
+        plant = BlueJadeVine()
+        print("")
+        print(plant)
+        input("Press enter to continue...")
 
-   biomes = [Arboretum.rivers, Arboretum.grasslands, Arboretum.swamps]
+   biomes = [Arboretum.rivers, Arboretum.grasslands, Arboretum.swamps, Arboretum.mountains, Arboretum.forests]
 
    options = []
 
-   for biome in biomes:
-       for environment in biome:
-           if len(environment.plants) < environment.plant_capacity:
-               options.append(environment)
+   for environment in biomes:
+       for biome in environment:
+          options.append(biome)
 
    for index, option in enumerate(options):
+       print("")
        print(f'{index + 1}. {option} ({len(option.plants)} plants)')
 
    if len(options) > 0:
+       print("")
        print(f"Where would you like to plant {plant}?")
        choice = input("> _")
+       options[int(choice) - 1].add_plant(plant)
 
    else:
-       print("error")
+       print("")
+       print("There have been no biomes annexed yet")
+       print("")
        input("Press enter to continue")
