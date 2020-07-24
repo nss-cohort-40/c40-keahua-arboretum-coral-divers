@@ -14,4 +14,4 @@ class Biome(ContainsAnimals, ContainsPlants, Identifiable):
         self.characteristics = characteristics
     
     def __str__(self):
-        return f'{self.__name}'
+        return f'{self.name}'
