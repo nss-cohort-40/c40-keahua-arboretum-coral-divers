@@ -6,3 +6,5 @@ from .nene_goose import NeneGoose
 from .opeapea import Opeapea
 from .pueo import Pueo
 from .ulae import Ulae
+from .happy_faced_spider import HappyFacedSpider
+

@@ -1,4 +1,4 @@
-from environments import Biome
+from .biome import Biome
 
 class Coastline(Biome):
 
