@@ -3,6 +3,9 @@ from animals import RiverDolphin
 def release_animal(arboretum):
     animal = None
 
+    print("+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-")
+    print("+ C H O O S E  A N I M A L  F O R  R E L E A S E +")
+    print("+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-")
     print("1. River Dolphin")
     print("2. Dragonfly")
 

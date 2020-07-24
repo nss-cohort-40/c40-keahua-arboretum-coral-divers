@@ -11,6 +11,9 @@ from arboretum import Arboretum
 
 def annex_habitat(Arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
+    print("+-++-++-++-++-++-++-++-++-++-++-++")
+    print("+ C H O O S E  A  H A B I T A T +")
+    print("+-++-++-++-++-++-++-++-++-++-++-++")
     print("1. River")
     print("2. Swamp")
     print("3. Coastline")
