@@ -9,7 +9,7 @@ class Mountain(ContainsAnimals, ContainsPlants, Biome):
         Identifiable.__init__(self)
         ContainsAnimals.__init__(self)
         ContainsPlants.__init__(self)
-        Biome.__init__(self, "Mountain", 4, 6)
+        Biome.__init__(self, "Mountain", 4, 6, "High Elevation")
 
     def add_animal(self, animal):
         try:
