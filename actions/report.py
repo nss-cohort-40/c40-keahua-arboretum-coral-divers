@@ -35,16 +35,11 @@ def build_facility_report(arboretum):
             print(f"      {plant.species}   {plant.id}")
     for mountain in arboretum.mountains:
         print(f'Mountain [{mountain.id}]')
-<<<<<<< HEAD
-        for plant in mountain.plants:
-            print(f'     {plant} [{plant.id}]')
-=======
         for animal in mountain.animals:
             print(f"      {animal.species}  {animal.id}")
         for plant in mountain.plants:
             print(f"      {plant.species}   {plant.id}")
    
->>>>>>> master
 
     input("\n\nPress any key to continue...")
 
