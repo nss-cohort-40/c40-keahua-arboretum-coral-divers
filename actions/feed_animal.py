@@ -11,6 +11,9 @@ from animals import Ulae
 def feed_animal(arboretum):
     animal = None
 
+    print("+-++-++-++-++-++-++-++-++-++-")
+    print("+ F E E D  A N  A N I M A L +")
+    print("+-++-++-++-++-++-++-++-++-++-")
     print("-------------------------------")
     print("1. Pueo")
     print("2. River Dolphin")
