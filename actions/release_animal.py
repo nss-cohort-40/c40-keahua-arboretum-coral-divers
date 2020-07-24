@@ -10,6 +10,7 @@ from animals import HappyFacedSpider
 
 def release_animal(arboretum):
     animal = None
+    allBiomes = list()
 
     print("1. Gold Dust Day Gecko")
     print("2. River Dolphin")
@@ -40,13 +41,12 @@ def release_animal(arboretum):
         animal == HappyFacedSpider()
 
     for key, value in arboretum.__dict__.items():
-        print(type(key))
         if type(value) is list:
-            for index, biome in enumerate(value):
-                print(f'{index + 1}. {biome}: {biome.id}')
-
-    # for index, river in enumerate(arboretum.rivers):
-    #     print(f'{index + 1}. River {river.id}')
+            for biome in value:
+                allBiomes.append(biome)
+                
+    for index, biome in enumerate(allBiomes):
+        print(f'{index + 1}. {biome}: [{biome.id}]')
 
     print("Release the animal into which biome?")
     choice = input("> ")
