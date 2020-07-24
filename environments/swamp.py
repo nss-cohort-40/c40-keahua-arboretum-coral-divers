@@ -1,18 +1,14 @@
 from attributes import Stagnant
-from attributes import ContainsAnimals
-from attributes import ContainsPlants
 from .biome import Biome
 # import sys
 # sys.path.append('../')
 
 # from animals.
 
-class Swamp(Biome, ContainsAnimals, ContainsPlants, Stagnant):
+class Swamp(Biome, Stagnant):
 
     def __init__(self):
-        Biome.__init__(self, "Swamp", 8, 12)
-        ContainsAnimals.__init__(self)
-        ContainsPlants.__init__(self)
+        Biome.__init__(self, "Swamp", 8, 12, "Stagnant Freshwater")
         Stagnant.__init__(self)
         # self.inhabitants = []
 

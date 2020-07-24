@@ -1,15 +1,10 @@
-from attributes import ContainsAnimals
-from attributes import ContainsPlants
-from animals import Identifiable
+from .biome import Biome
 
-class Grassland(Biome, ContainsAnimals, ContainsPlants):
+class Grassland(Biome):
 
     def __init__(self):
-        Identifiable.__init__(self)
-        Biome.__init__(self, "Grassland", 22, 15)
-        ContainsAnimals.__init__(self)
-        ContainsPlants.__init__(self)
-        self.characteristics = ["Little rainfall", "No shade"]
+        Biome.__init__(self, "Grassland", 22, 15, {"little Rainfall", "No Shade"})
+        
 
     def add_animal(self, animal):
         try:

@@ -1,14 +1,10 @@
 from .biome import Biome
-from attributes import ContainsAnimals
-from attributes import ContainsPlants
 
 
-class Mountain(ContainsAnimals, ContainsPlants, Biome):
+
+class Mountain(Biome):
 
     def __init__(self):
-        Identifiable.__init__(self)
-        ContainsAnimals.__init__(self)
-        ContainsPlants.__init__(self)
         Biome.__init__(self, "Mountain", 4, 6, "High Elevation")
 
     def add_animal(self, animal):
