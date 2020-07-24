@@ -1,20 +1,17 @@
+from attributes import ContainsAnimals
+from attributes import ContainsPlants
 from attributes import Identifiable
 
-class Biome:
+class Biome(ContainsAnimals, ContainsPlants, Identifiable):
 
-    def __init__(self, name, capacity_animal, capacity_plant):
+    def __init__(self, name, plant_capacity, animal_capacity, characteristics):
+        ContainsAnimals.__init__(self)
+        ContainsPlants.__init__(self)
         Identifiable.__init__(self)
         self.name = name
-        self.capacity_animal = capacity_animal
-        self.capacity_plant = capacity_plant
-        self.plants = list()
-        self.animals = list()
-
-    def animal_count(self):
-        return f"This place has {len(self.animals)} animals in it."
-
-    def plant_count(self):
-        return f"This place has {len(self.plants)} plants in it."
-
-    #Add amimal method and add plant method could live here or on individual environments
-        
+        self.plant_capacity = plant_capacity
+        self.animal_capacity = animal_capacity
+        self.characteristics = characteristics
+    
+    def __str__(self):
+        return f'{self.__name}'
