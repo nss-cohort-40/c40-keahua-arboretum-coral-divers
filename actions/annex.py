@@ -25,6 +25,8 @@ def annex_habitat(Arboretum):
 
     if choice == "1":
         river = River()
+        print(river)
+        input("Press enter to continue...")
         Arboretum.rivers.append(river)
     if choice == "2":
         swamp = Swamp()
