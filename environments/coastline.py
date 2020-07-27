@@ -10,6 +10,8 @@ class Coastline(Biome):
             if len(self.animals) < self.animal_capacity:
                 if animal.aquatic and animal.cell_type == "hypotonic":
                     self.animals.append(animal)
+                    print(f'{animal.species} was added to the coastline!')
+                    input('Please press enter to continue...')
                 else:
                     raise AttributeError('Cannot add non-aquatic or freshwater animals to a coastline!')
             else:

@@ -11,3 +11,5 @@ from .walking import Walking
 from .stagnant import Stagnant
 from .mammal import Mammal
 from .reptile import Reptile
+from .birds import Birds
+from .euryhaline import Euryhaline

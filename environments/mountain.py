@@ -12,6 +12,8 @@ class Mountain(Biome):
             if len(self.animals) < self.animal_capacity:
                 if animal.mammal and animal.flying and animal.terrestrial:
                     self.animals.append(animal)
+                    print(f'{animal.species} was added to the mountain!')
+                    input('Please press enter to continue...')
                 else:
                     raise AttributeError('Cannot add aquatic animals to a mountain environment.')
             else:
@@ -23,8 +25,16 @@ class Mountain(Biome):
 
     def add_plant(self, plant):
         try:
-            if plant.sunlight.lower() == "partial":
-                self.plants.append(plant)
-        except AttributeError:
-            raise AttributeError(
-                "Mountain flora require partial sunlight.")
+            if len(self.plants) < self.plant_capacity:
+                if plant.sunlight.lower() == "partial":
+                    self.plants.append(plant)
+                    print(f'{plant.species} was added to the mountain!')
+                    input('Press enter to continue...')
+                else:
+                    raise AttributeError('Plant cannot grow on the mountain!')
+            else:
+                raise AttributeError('Mountain has already reached plant capacity!')
+        except AttributeError as err:
+            print(err)
+
+            input('Press enter to continue...')
