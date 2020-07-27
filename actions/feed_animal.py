@@ -28,27 +28,67 @@ def feed_animal(arboretum):
     choice = input("> ")
 
     animal_collection = []
+    river_dolphin_collection = []
+    kikakapu_collection = []
+    pueo_collection = []
+    ulae_collection = []
+    gold_dust_day_gecko_collection = []
+    nene_goose_collection = []
+    opeapea_collection = []
+    hawaiian_happy_faced_spider_collection = []
 
-    if choice == "2":
-        for river in arboretum.rivers:
-            for animal in river.animals:
-                print(f"      {animal.species}  {animal.id}")
-        for swamp in arboretum.swamps:
-            for animal in swamp.animals:
-                print(f"      {animal.species}  {animal.id}")
-        for coastline in arboretum.coastlines:
-            for animal in coastline.animals:
-                print(f"      {animal.species}  {animal.id}")
-        for grassland in arboretum.grasslands:
-            for animal in grassland.animals:
-                print(f"      {animal.species}  {animal.id}")
-        for forest in arboretum.forests:
-            for animal in forest.animals:
-                print(f"      {animal.species}  {animal.id}")
-        for mountain in arboretum.mountains:
-            for animal in mountain.animals:
-                print(f"      {animal.species}  {animal.id}")
-        input("Press ENTER to continue")
+    for river in arboretum.rivers:
+        for animal in river.animals:
+            if animal.species == "river dolphin":
+                river_dolphin_collection.append(animal)
+            else:
+                kikakapu_collection.append(animal)
+            print(f"{animal.species} {animal.id}")
+    for swamp in arboretum.swamps:
+        for animal in swamp.animals:
+            if animal.species == "kikakapu":
+                kikakapu_collection.append(animal)
+            else:
+                hawaiian_happy_faced_spider_collection.append(animal)
+            print(f"{animal.species} {animal.id}")
+    for coastline in arboretum.coastlines:
+        for animal in coastline.animals:
+            if animal.species == "ulae":
+                ulae_collection.append(animal)
+            else:
+                river_dolphin_collection.append(animal)
+            print(f"{animal.species} {animal.id}")
+    for grassland in arboretum.grasslands:
+        for animal in grassland.animals:
+            if animal.species == "pueo":
+                pueo_collection.append(animal)
+            else:
+                nene_goose_collection.append(animal)
+            print(f"{animal.species} {animal.id}")
+    for forest in arboretum.forests:
+        for animal in forest.animals:
+            if animal.species == "pueo":
+                pueo_collection.append(animal)
+            if animal.species == "opeapea":
+                opeapea_collection.append(animal)
+            else:
+                gold_dust_day_gecko_collection.append(animal)
+            print(f"{animal.species} {animal.id}")
+    for mountain in arboretum.mountains:
+        for animal in mountain.animals:
+            opeapea_collection.append(animal)
+            print(f"{animal.species} {animal.id}")
+    input("Press ENTER to continue")
+
+    if choice == "1":
+        for index, animal in enumerate(pueo_collection):
+            print(f"{index + 1} {animal.species} {animal.id}")
+
+
+
+
+
+
 
     # for river in arboretum.rivers:
     #     for animal in river.animals:
