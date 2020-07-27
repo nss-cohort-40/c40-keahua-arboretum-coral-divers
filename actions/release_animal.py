@@ -44,27 +44,32 @@ def release_animal(arboretum):
     for (key, value) in arboretum.__dict__.items():
         if type(value) is list:
             for index, biome in enumerate(value):
-                biome.original_index = index
-                allBiomes.append(biome)
+                if len(biome.animals) < biome.animal_capacity:
+                    biome.original_index = index
+                    allBiomes.append(biome)
                 
-    for index, biome in enumerate(allBiomes):
-        print(f'{index + 1}. {biome} [{biome.id}] ({len(biome.animals)} animals)')
+    if len(allBiomes) == 0:
+        print('There are no biomes with space available.')
+        input('Please press enter to continue...')
+    else:
+        for index, biome in enumerate(allBiomes):
+            print(f'{index + 1}. {biome} [{biome.id}] ({len(biome.animals)} animals)')
 
-    print("Release the animal into which biome?")
-    choice = input("> ")
-    index = int(choice) - 1
-    selected_biome = allBiomes[index]
-    original_biome_index = selected_biome.original_index
-    # Unless there is a way to dynamically access object properties in Python, this is the best I can do.
-    if selected_biome.name == "Coastline":
-        arboretum.coastlines[original_biome_index].add_animal(animal)
-    if selected_biome.name == "Forest":
-        arboretum.forests[original_biome_index].add_animal(animal)
-    if selected_biome.name == "Grassland":
-        arboretum.grasslands[original_biome_index].add_animal(animal)
-    if selected_biome.name == "Mountain":
-        arboretum.mountains[original_biome_index].add_animal(animal)
-    if selected_biome.name == "River":
-        arboretum.rivers[original_biome_index].add_animal(animal)
-    if selected_biome.name == "Swamp":
-        arboretum.swamps[original_biome_index].add_animal(animal)
+        print("Release the animal into which biome?")
+        choice = input("> ")
+        index = int(choice) - 1
+        selected_biome = allBiomes[index]
+        original_biome_index = selected_biome.original_index
+        # Unless there is a way to dynamically access object properties in Python, this is the best I can do.
+        if selected_biome.name == "Coastline":
+            arboretum.coastlines[original_biome_index].add_animal(animal)
+        if selected_biome.name == "Forest":
+            arboretum.forests[original_biome_index].add_animal(animal)
+        if selected_biome.name == "Grassland":
+            arboretum.grasslands[original_biome_index].add_animal(animal)
+        if selected_biome.name == "Mountain":
+            arboretum.mountains[original_biome_index].add_animal(animal)
+        if selected_biome.name == "River":
+            arboretum.rivers[original_biome_index].add_animal(animal)
+        if selected_biome.name == "Swamp":
+            arboretum.swamps[original_biome_index].add_animal(animal)

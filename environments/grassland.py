@@ -9,8 +9,10 @@ class Grassland(Biome):
     def add_animal(self, animal):
         try:
             if len(self.animals) < self.animal_capacity:
-                if animal.terrestrial and animal.species_type == "bird":
+                if animal.species_type == "bird":
                     self.animals.append(animal)
+                    print(f'{animal.species} was added to the grassland!')
+                    input('Please press enter to continue...')
                 else:
                     raise AttributeError('Cannot add non-terrestrial animal to a grassland!')
             else:
@@ -22,7 +24,18 @@ class Grassland(Biome):
 
     def add_plant(self, plant):
         try:
-            if plant.sunlight.lower() == "full" and plant.insecticide_resistance.lower() == "high" or plant.sunlight.lower() == "partial" and plant.insecticide_resitance.lower() == "medium":
-                self.plants.append(plant)
-        except AttributeError:
-            raise AttributeError("Cannot add this plant/tree to this forest")
+            if len(self.plants) < self.plant_capacity:
+                if plant.sunlight.lower() == "partial" and plant.insecticide_resistance.lower() == "medium":
+                    self.plants.append(plant)
+                    print(f'{plant.species} was added to the grassland!')
+                    input('Press enter to continue...')
+                elif plant.sunlight.lower() == "full" and plant.insecticide_resistance.lower() == "high":
+                    self.plants.append(plant)
+                    print(f'{plant.species} was added to the grassland!')
+                    input('Press enter to continue...')
+            else:
+                raise AttributeError('Grassland has already reached plant capacity!')
+        except AttributeError as err:
+            print(err)
+
+            input('Press enter to continue...')

@@ -6,5 +6,8 @@ class Silversword(Plant, Terrestrial):
         Plant.__init__(self, "Silversword", "Grassland", "full", 22, "high")
         Terrestrial.__init__(self)
 
+    def __str__(self):
+        return f"{self.species} [{self.id}]"
+
 
 

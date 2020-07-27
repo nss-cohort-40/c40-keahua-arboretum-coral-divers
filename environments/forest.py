@@ -12,8 +12,10 @@ class Forest(Biome, Flying):
     def add_animal(self, animal):
         try:
             if len(self.animals) < self.animal_capacity:
-                if animal.terrestrial and (animal.terrestrial.is_reptile or animal.wing_count):
+                if animal.terrestrial and (animal.is_reptile or animal.wing_count):
                     self.animals.append(animal)
+                    print(f'{animal.species} was added to the forest!')
+                    input('Please press enter to continue...')
                 else:
                     raise AttributeError('Cannot add non-terrestrial animal to a forest')
             else:
@@ -25,8 +27,16 @@ class Forest(Biome, Flying):
 
     def add_plant(self, plant):
         try:
-            if plant.sunlight.lower() == 'shade':
-                self.plants.append(plant)
-        except AttributeError:
-            raise AttributeError(
-                "Cannot add this plant/tree to this forest")
+            if len(self.plants) < self.plant_capacity:
+                if plant.sunlight.lower() == 'shade':
+                    self.plants.append(plant)
+                    print(f'{plant.species} was added to the forest!')
+                    input('Press enter to continue...')
+                else:
+                    raise AttributeError('Plant cannot grow in the forest!')
+            else:
+                raise AttributeError('Forest has reached plant capacity!')
+        except AttributeError as err:
+            print(err)
+
+            input('Press enter to continue...')

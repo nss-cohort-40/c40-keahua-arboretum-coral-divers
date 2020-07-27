@@ -6,4 +6,7 @@ class RainbowEucalyptusTree(Plant, Terrestrial):
         Plant.__init__(self, "RainbowEucalyptusTree", "Forest", "shade", 8, "low")
         Terrestrial.__init__(self)
 
+    def __str__(self):
+        return f"{self.species} [{self.id}]"
+
 
