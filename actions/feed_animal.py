@@ -39,152 +39,130 @@ def feed_animal(arboretum):
 
     for river in arboretum.rivers:
         for animal in river.animals:
-            if animal.species == "river dolphin":
+            if animal.species.lower() == "river dolphin":
                 river_dolphin_collection.append(animal)
             else:
                 kikakapu_collection.append(animal)
-            print(f"{animal.species} {animal.id}")
     for swamp in arboretum.swamps:
         for animal in swamp.animals:
-            if animal.species == "kikakapu":
+            if animal.species.lower() == "kikakapu":
                 kikakapu_collection.append(animal)
             else:
                 hawaiian_happy_faced_spider_collection.append(animal)
-            print(f"{animal.species} {animal.id}")
     for coastline in arboretum.coastlines:
         for animal in coastline.animals:
-            if animal.species == "ulae":
+            if animal.species.lower() == "ulae":
                 ulae_collection.append(animal)
             else:
                 river_dolphin_collection.append(animal)
-            print(f"{animal.species} {animal.id}")
     for grassland in arboretum.grasslands:
         for animal in grassland.animals:
-            if animal.species == "pueo":
+            if animal.species.lower() == "pueo":
                 pueo_collection.append(animal)
             else:
                 nene_goose_collection.append(animal)
-            print(f"{animal.species} {animal.id}")
     for forest in arboretum.forests:
         for animal in forest.animals:
-            if animal.species == "pueo":
+            if animal.species.lower() == "pueo":
                 pueo_collection.append(animal)
-            if animal.species == "opeapea":
+            if animal.species.lower() == "opeapea":
                 opeapea_collection.append(animal)
             else:
                 gold_dust_day_gecko_collection.append(animal)
-            print(f"{animal.species} {animal.id}")
     for mountain in arboretum.mountains:
         for animal in mountain.animals:
             opeapea_collection.append(animal)
-            print(f"{animal.species} {animal.id}")
-    input("Press ENTER to continue")
 
+    print("Select which animal you would like to feed:")
     if choice == "1":
         for index, animal in enumerate(pueo_collection):
-            print(f"{index + 1} {animal.species} {animal.id}")
+            print(f"{index + 1}. {animal.species} {animal.id}")
+        animal_selected = animal.species.lower()
+    if choice == "2":
+        for index, animal in enumerate(river_dolphin_collection):
+            print(f"{index + 1}. {animal.species} {animal.id}")
+        animal_selected = animal.species.lower()
+    if choice == "3":
+        for index, animal in enumerate(ulae_collection):
+            print(f"{index + 1}. {animal.species} {animal.id}")
+        animal_selected = animal.species.lower()
+    if choice == "4":
+        for index, animal in enumerate(gold_dust_day_gecko_collection):
+            print(f"{index + 1}. {animal.species} {animal.id}")
+        animal_selected = animal.species.lower()
+    if choice == "5":
+        for index, animal in enumerate(nene_goose_collection):
+            print(f"{index + 1}. {animal.species} {animal.id}")
+        animal_selected = animal.species.lower()
+    if choice == "6":
+        for index, animal in enumerate(kikakapu_collection):
+            print(f"{index + 1}. {animal.species} {animal.id}")
+        animal_selected = animal.species.lower()
+    if choice == "7":
+        for index, animal in enumerate(opeapea_collection):
+            print(f"{index + 1}. {animal.species} {animal.id}")
+        animal_selected = animal.species.lower()
+    if choice == "8":
+        for index, animal in enumerate(hawaiian_happy_faced_spider_collection):
+            print(f"{index + 1}. {animal.species} {animal.id}")
+        animal_selected = animal.species.lower()
+    option = input("> ")
 
+    if animal_selected == "pueo":
+        for index, prey in enumerate(animal.prey):
+            print(f"{index + 1}. {prey}")
+        option = input(
+            f"Select the food you'd like to feed the {animal.species}: > ")
+        print(
+            f"The {animal.species} enjoyed the {animal.prey[int(option) - 1]}!")
+    if animal_selected == "river dolphin":
+        for index, prey in enumerate(animal.prey):
+            print(f"{index + 1}. {prey}")
+        option = input(
+            f"Select the food you'd like to feed the {animal.species}: > ")
+        print(
+            f"The {animal.species} enjoyed the {animal.prey[int(option) - 1]}!")
+    if animal_selected == "ulae":
+        for index, prey in enumerate(animal.prey):
+            print(f"{index + 1}. {prey}")
+        option = input(
+            f"Select the food you'd like to feed the {animal.species}: > ")
+        print(
+            f"The {animal.species} enjoyed the {animal.prey[int(option) - 1]}!")
+    if animal_selected == "gold dust day gecko":
+        for index, prey in enumerate(animal.prey):
+            print(f"{index + 1}. {prey}")
+        option = input(
+            f"Select the food you'd like to feed the {animal.species}: > ")
+        print(
+            f"The {animal.species} enjoyed the {animal.prey[int(option) - 1]}!")
+    if animal_selected == "nene goose":
+        for index, prey in enumerate(animal.prey):
+            print(f"{index + 1}. {prey}")
+        option = input(
+            f"Select the food you'd like to feed the {animal.species}: > ")
+        print(
+            f"The {animal.species} enjoyed the {animal.prey[int(option) - 1]}!")
+    if animal_selected == "kikakapu":
+        for index, prey in enumerate(animal.prey):
+            print(f"{index + 1}. {prey}")
+        option = input(
+            f"Select the food you'd like to feed the {animal.species}: > ")
+        print(
+            f"The {animal.species} enjoyed the {animal.prey[int(option) - 1]}!")
+    if animal_selected == "opeapea":
+        for index, prey in enumerate(animal.prey):
+            print(f"{index + 1}. {prey}")
+        option = input(
+            f"Select the food you'd like to feed the {animal.species}: > ")
+        print(
+            f"The {animal.species} enjoyed the {animal.prey[int(option) - 1]}!")
+    if animal_selected == "hawaiian happy-faced spider":
+        for index, prey in enumerate(animal.prey):
+            print(f"{index + 1}. {prey}")
+        option = input(
+            f"Select the food you'd like to feed the {animal.species}: > ")
+        print(
+            f"The {animal.species} enjoyed the {animal.prey[int(option) - 1]}!")
 
-
-
-
-
-
-    # for river in arboretum.rivers:
-    #     for animal in river.animals:
-    #         animal_collection.append(animal)
-    # for swamp in arboretum.swamps:
-    #     for animal in swamp.animals:
-    #         animal_collection.append(animal)
-    # for coastline in arboretum.coastlines:
-    #     for animal in coastline.animals:
-    #         animal_collection.append(animal)
-    # for grassland in arboretum.grasslands:
-    #     for animal in grassland.animals:
-    #         animal_collection.append(animal)
-    # for forest in arboretum.forests:
-    #     for animal in forest.animals:
-    #         animal_collection.append(animal)
-    # for mountain in arboretum.mountains:
-    #     for animal in mountain.animals:
-    #         animal_collection.append(animal)
-
-    # if choice == "1":
-    #     for animal in animal_collection:
-    #         if animal.species.lower() == "pueo":
-    #             print(f"{animal.species} {animal.id}")
-    # if choice == "2":
-    #     for animal in animal_collection:
-    #         if animal.species.lower() == "river dolphin":
-    #             print(f"{animal.species} {animal.id}")
-    # if choice == "3":
-    #     for animal in animal_collection:
-    #         if animal.species.lower() == "ulae":
-    #             print(f"{animal.species} {animal.id}")
-    # if choice == "4":
-    #     for animal in animal_collection:
-    #         if animal.species.lower() == "gold dust day gecko":
-    #             print(f"{animal.species} {animal.id}")
-    # if choice == "5":
-    #     for animal in animal_collection:
-    #         if animal.species.lower() == "nene goose":
-    #             print(f"{animal.species} {animal.id}")
-    # if choice == "6":
-    #     for animal in animal_collection:
-    #         if animal.species.lower() == "kikakapu":
-    #             print(f"{animal.species} {animal.id}")
-    # if choice == "7":
-    #     for animal in animal_collection:
-    #         if animal.species.lower() == "opeapea":
-    #             print(f"{animal.species} {animal.id}")
-    # if choice == "8":
-    #     for animal in animal_collection:
-    #         if animal.species.lower() == "hawaiian happy-faced spider":
-    #             print(f"{animal.species} {animal.id}")
-
-
-# More bad code to reference:
-    # if choice == "1":
-    #     for grassland in arboretum.grasslands:
-    #         for animal in grassland.animals:
-    #             if animal.species.lower() == "pueo":
-    #                 print(f"{animal.species}")
-    #                 input("\n\nPress any key to continue...")
-
-
-# Previous code to reference:
-
-    # if choice == "1":
-    #     pueo = Pueo().__dict__
-    #     for index, item in enumerate(pueo.):
-    #         print(f"{index + 1}. {item}")
-    # if choice == "2":
-    #     river_dolphin = RiverDolphin.__dict__
-    #     for index, item in enumerate(river_dolphin.items()):
-    #         print(f"{index + 1}. {item}")
-    #         print("What would you like to feed the dolphins today?")
-    #         choice = input("> ")
-    # if choice == "3":
-    #     animal = Ulae()
-    #     for index, item in enumerate(Ulae.Animal.__prey):
-    #         print(f"{index + 1}. {item}")
-    # if choice == "4":
-    #     animal = GoldDustDayGecko()
-    #     for index, item in enumerate(GoldDustDayGecko.Animal.__prey):
-    #         print(f"{index + 1}. {item}")
-    # if choice == "5":
-    #     animal = NeneGoose()
-    #     for index, item in enumerate(NeneGoose.Animal.__prey):
-    #         print(f"{index + 1}. {item}")
-    # if choice == "6":
-    #     animal = Kikakapu()
-    #     for index, item in enumerate(Kikakapu.Animal.__prey):
-    #         print(f"{index + 1}. {item}")
-    # if choice == "7":
-    #     animal = Opeapea()
-    #     for index, item in enumerate(Opeapea.Animal.__prey):
-    #         print(f"{index + 1}. {item}")
-    # if choice == "8":
-    #     animal = HappyFacedSpider()
-    #     for index, item in enumerate(Opeapea.Animal.__prey):
-    #         print(f"{index + 1}. {item}")
+    input("> ")
