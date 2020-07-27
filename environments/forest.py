@@ -11,11 +11,17 @@ class Forest(Biome, Flying):
 
     def add_animal(self, animal):
         try:
-            if animal.terrestial and (animal.terrestial.is_reptile or animal.wing_count):
-                self.animals.append(animal)
-        except AttributeError:
-            raise AttributeError(
-                "Cannot add animal to this biome")
+            if len(self.animals) < self.animal_capacity:
+                if animal.terrestrial and (animal.terrestrial.is_reptile or animal.wing_count):
+                    self.animals.append(animal)
+                else:
+                    raise AttributeError('Cannot add non-terrestrial animal to a forest')
+            else:
+                raise AttributeError('Too many animals in this forest!')
+        except AttributeError as err:
+            print(f'Cannot add animal! {err}')
+
+            input('Press enter to continue...')
 
     def add_plant(self, plant):
         try:

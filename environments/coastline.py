@@ -7,7 +7,14 @@ class Coastline(Biome):
 
     def add_animal(self, animal):
         try:
-            if animal.aquatic and animal.cell_type == "hypotonic":
-                self.animals.append(animal)
-        except AttributeError:
-            raise AttributeError("Cannot add a terrestrial animal or a freshwater aquatic animal to a coastline")
+            if len(self.animals) < self.animal_capacity:
+                if animal.aquatic and animal.cell_type == "hypotonic":
+                    self.animals.append(animal)
+                else:
+                    raise AttributeError('Cannot add non-aquatic or freshwater animals to a coastline!')
+            else:
+                raise AttributeError('Too many animals in this coastline!')
+        except AttributeError as err:
+            print(f'Cannot add animal! {err}')
+
+            input('Press enter to continue...')

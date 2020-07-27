@@ -8,10 +8,17 @@ class Grassland(Biome):
 
     def add_animal(self, animal):
         try:
-            if animal.terrestrial and animal.species_type == "bird":
-                self.animals.append(animal)
-        except AttributeError:
-            raise AttributeError("Cannot add non-bird animals to a grassland")
+            if len(self.animals) < self.animal_capacity:
+                if animal.terrestrial and animal.species_type == "bird":
+                    self.animals.append(animal)
+                else:
+                    raise AttributeError('Cannot add non-terrestrial animal to a grassland!')
+            else:
+                raise AttributeError('Too many animals in this grassland!')
+        except AttributeError as err:
+            print(f'Cannot add animal {err}')
+
+            input('Press enter to continue...')
 
     def add_plant(self, plant):
         try:

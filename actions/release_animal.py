@@ -41,34 +41,30 @@ def release_animal(arboretum):
         animal = Opeapea()
     if choice == "8":
         animal = HappyFacedSpider()
-    # Changing the Arboretum to a dictionary and looping through it.
     for (key, value) in arboretum.__dict__.items():
-        # When the loop finds a list...
         if type(value) is list:
-            # ...then loop through that list and reference each index.
             for index, biome in enumerate(value):
-                # Smash the index number into a new property on the object at that list index...
                 biome.original_index = index
-                # ...so that when it is appended into a new list it can be referenced later.
                 allBiomes.append(biome)
                 
     for index, biome in enumerate(allBiomes):
-        print(f'{index + 1}. {biome}: [{biome.id}]')
+        print(f'{index + 1}. {biome} [{biome.id}] ({len(biome.animals)} animals)')
 
     print("Release the animal into which biome?")
     choice = input("> ")
     index = int(choice) - 1
     selected_biome = allBiomes[index]
     original_biome_index = selected_biome.original_index
+    # Unless there is a way to dynamically access object properties in Python, this is the best I can do.
     if selected_biome.name == "Coastline":
-        arboretum.coastlines[original_biome_index].animals.append(animal)
+        arboretum.coastlines[original_biome_index].add_animal(animal)
     if selected_biome.name == "Forest":
-        arboretum.forests[original_biome_index].animals.append(animal)
+        arboretum.forests[original_biome_index].add_animal(animal)
     if selected_biome.name == "Grassland":
-        arboretum.grasslands[original_biome_index].animals.append(animal)
+        arboretum.grasslands[original_biome_index].add_animal(animal)
     if selected_biome.name == "Mountain":
-        arboretum.mountains[original_biome_index].animals.append(animal)
+        arboretum.mountains[original_biome_index].add_animal(animal)
     if selected_biome.name == "River":
-        arboretum.rivers[original_biome_index].animals.append(animal)
+        arboretum.rivers[original_biome_index].add_animal(animal)
     if selected_biome.name == "Swamp":
-        arboretum.swamps[original_biome_index].animals.append(animal)
+        arboretum.swamps[original_biome_index].add_animal(animal)
