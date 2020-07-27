@@ -4,7 +4,7 @@ from .biome import Biome
 class River(Biome):
 
     def __init__(self):
-        Biome.__init__(self, "River", 6, 1, "Fresh Water")
+        Biome.__init__(self, "River", 6, 12, "Fresh Water")
         
 
     def add_animal(self, animal):

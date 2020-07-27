@@ -4,7 +4,7 @@ from .biome import Biome
 class Swamp(Biome, Stagnant):
 
     def __init__(self):
-        Biome.__init__(self, "Swamp", 8, 12, "Stagnant Freshwater")
+        Biome.__init__(self, "Swamp", 12, 8, "Stagnant Freshwater")
         Stagnant.__init__(self)
 
     def add_animal(self, animal):

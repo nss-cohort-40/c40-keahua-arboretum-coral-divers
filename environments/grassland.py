@@ -3,7 +3,7 @@ from .biome import Biome
 class Grassland(Biome):
 
     def __init__(self):
-        Biome.__init__(self, "Grassland", 22, 15, {"little Rainfall", "No Shade"})
+        Biome.__init__(self, "Grassland", 15, 22, {"little Rainfall", "No Shade"})
         
 
     def add_animal(self, animal):
