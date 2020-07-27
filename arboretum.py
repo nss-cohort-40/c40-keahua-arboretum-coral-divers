@@ -13,7 +13,7 @@ class Arboretum:
         self.kikakapu = []
         self.nene_goose = []
         self.opeapea = []
-        self. pueo = []
+        self.pueo = []
         self.river_dolphin = []
         self.ulae = []
         
