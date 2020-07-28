@@ -1,10 +1,10 @@
 from .biome import Biome
 
+
 class River(Biome):
 
     def __init__(self):
         Biome.__init__(self, "River", 6, 1, "Fresh Water")
-        
 
     def add_animal(self, animal):
         try:
@@ -18,7 +18,8 @@ class River(Biome):
                     print(f'{animal.species} was added to the river!')
                     input('Please press enter to continue...')
                 else:
-                    raise AttributeError('This animal does not belong in the river!')
+                    raise AttributeError(
+                        'This animal does not belong in the river!')
             else:
                 animal_accepted = False
                 return animal_accepted
@@ -37,7 +38,8 @@ class River(Biome):
                 else:
                     raise AttributeError('Plant cannot grow in the river!')
             else:
-                raise AttributeError('River has already reached plant capacity!')
+                raise AttributeError(
+                    'River has already reached plant capacity!')
         except AttributeError as err:
             print(err)
 
