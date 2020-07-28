@@ -76,39 +76,42 @@ def build_biome_choices(animal, arboretum, animal_accepted):
 def handle_biome_choice(available_biomes, animal, arboretum):
     print("Choose biome to release animal or enter x to go back.")
     choice = input("> ")
-    if choice == "x":
-        pass
-    else:
-        index = int(choice) - 1
-        selected_biome = available_biomes[index]
-        original_biome_index = selected_biome.original_index
-        if selected_biome.name == "Coastline":
-            animal_accepted = arboretum.coastlines[original_biome_index].add_animal(
-                animal)
-            if animal_accepted == False:
-                build_biome_choices(animal, arboretum, animal_accepted)
-        if selected_biome.name == "Forest":
-            animal_accepted = arboretum.forests[original_biome_index].add_animal(
-                animal)
-            if animal_accepted == False:
-                build_biome_choices(animal, arboretum, animal_accepted)
-        if selected_biome.name == "Grassland":
-            animal_accepted = arboretum.grasslands[original_biome_index].add_animal(
-                animal)
-            if animal_accepted == False:
-                build_biome_choices(animal, arboretum, animal_accepted)
-        if selected_biome.name == "Mountain":
-            animal_accepted = arboretum.mountains[original_biome_index].add_animal(
-                animal)
-            if animal_accepted == False:
-                build_biome_choices(animal, arboretum, animal_accepted)
+    index = int(choice) - 1
+    selected_biome = available_biomes[index]
+    original_biome_index = selected_biome.original_index
+    try:
         if selected_biome.name == "River":
-            animal_accepted = arboretum.rivers[original_biome_index].add_animal(
-                animal)
-            if animal_accepted == False:
-                build_biome_choices(animal, arboretum, animal_accepted)
-        if selected_biome.name == "Swamp":
-            animal_accepted = arboretum.swamps[original_biome_index].add_animal(
-                animal)
-            if animal_accepted == False:
-                build_biome_choices(animal, arboretum, animal_accepted)
+            arboretum.coastlines[original_biome_index].add_animal(animal)
+
+    except:
+
+
+        # if selected_biome.name == "Coastline":
+        #     animal_accepted = arboretum.coastlines[original_biome_index].add_animal(animal)
+        #     if animal_accepted == False:
+        #         build_biome_choices(animal, arboretum, animal_accepted)
+        # if selected_biome.name == "Forest":
+        #     animal_accepted = arboretum.forests[original_biome_index].add_animal(
+        #         animal)
+        #     if animal_accepted == False:
+        #         build_biome_choices(animal, arboretum, animal_accepted)
+        # if selected_biome.name == "Grassland":
+        #     animal_accepted = arboretum.grasslands[original_biome_index].add_animal(
+        #         animal)
+        #     if animal_accepted == False:
+        #         build_biome_choices(animal, arboretum, animal_accepted)
+        # if selected_biome.name == "Mountain":
+        #     animal_accepted = arboretum.mountains[original_biome_index].add_animal(
+        #         animal)
+        #     if animal_accepted == False:
+        #         build_biome_choices(animal, arboretum, animal_accepted)
+        # if selected_biome.name == "River":
+        #     animal_accepted = arboretum.rivers[original_biome_index].add_animal(
+        #         animal)
+        #     if animal_accepted == False:
+        #         build_biome_choices(animal, arboretum, animal_accepted)
+        # if selected_biome.name == "Swamp":
+        #     animal_accepted = arboretum.swamps[original_biome_index].add_animal(
+        #         animal)
+        #     if animal_accepted == False:
+        #         build_biome_choices(animal, arboretum, animal_accepted)
