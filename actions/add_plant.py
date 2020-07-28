@@ -3,7 +3,6 @@ from plants import Silversword
 from plants import RainbowEucalyptusTree
 from plants import BlueJadeVine
 
-
 def add_plant(Arboretum):
     
    plant = None
@@ -42,13 +41,15 @@ def add_plant(Arboretum):
         print(plant)
         input("Press enter to continue...")
 
+   
    biomes = [Arboretum.rivers, Arboretum.grasslands, Arboretum.swamps, Arboretum.mountains, Arboretum.forests]
 
    options = []
 
    for environment in biomes:
        for biome in environment:
-          options.append(biome)
+          if len(biome.plants) < biome.plant_capacity:
+             options.append(biome)
 
    for index, option in enumerate(options):
        print("")
