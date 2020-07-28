@@ -1,8 +1,12 @@
+import os
+
+
 def build_facility_report(arboretum):
-    print("+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-")
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("\u001b[47m\u001b[30;1m+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-")
     print("+ S E E  L I S T  O F  A N I M A L  A N D  +")
     print("+      B I O M E S  A V A I L A B L E      +")
-    print("+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-")
+    print("+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-\u001b[0m\n\u001b[32m")
     for river in arboretum.rivers:
         print(f'River [{river.id}]')
         for animal in river.animals:
@@ -39,5 +43,6 @@ def build_facility_report(arboretum):
             print(f"      {animal.species}  [{animal.id}]")
         for plant in mountain.plants:
             print(f"      {plant.species}   [{plant.id}]")
+    print("\u001b[0m")
 
     input("\n\nPress any key to continue...")

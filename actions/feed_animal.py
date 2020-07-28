@@ -6,25 +6,22 @@ from animals import Opeapea
 from animals import Pueo
 from animals import RiverDolphin
 from animals import Ulae
+import os
 
 
 def feed_animal(arboretum):
-    # pueo = Pueo()
-    # river_dolphin = RiverDolphin()
-    # ulae = Ulae()
-
-    print("+-++-++-++-++-++-++-++-++-++-")
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("\u001b[47m\u001b[30;1m+-++-++-++-++-++-++-++-++-++-")
     print("+ F E E D  A N  A N I M A L +")
-    print("+-++-++-++-++-++-++-++-++-++-")
-    print("1. Pueo")
+    print("+-++-++-++-++-++-++-++-++-++-\u001b[0m\n")
+    print("\u001b[32m1. Pueo")
     print("2. River Dolphin")
     print("3. \'Ulae")
     print("4. Gold Dust Day Gecko")
     print("5. Nene Goose")
     print("6. Kīkākapu")
     print("7. Ope\'ape\'a")
-    print("8. Hawaiian Happy-Faced Spider")
-    print("")
+    print("8. Hawaiian Happy-Faced Spider\u001b[0m\n")
     choice = input("Choose animal to feed. > ")
 
     animal_collection = []
