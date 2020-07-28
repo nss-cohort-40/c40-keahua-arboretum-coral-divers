@@ -76,35 +76,35 @@ def feed_animal(arboretum):
     print("Select which animal you would like to feed:")
     if choice == "1":
         for index, animal in enumerate(pueo_collection):
-            print(f"{index + 1}. {animal.species} {animal.id}")
+            print(f"{index + 1}. {animal.species} [{animal.id}]")
         animal_selected = animal.species.lower()
     if choice == "2":
         for index, animal in enumerate(river_dolphin_collection):
-            print(f"{index + 1}. {animal.species} {animal.id}")
+            print(f"{index + 1}. {animal.species} [{animal.id}]")
         animal_selected = animal.species.lower()
     if choice == "3":
         for index, animal in enumerate(ulae_collection):
-            print(f"{index + 1}. {animal.species} {animal.id}")
+            print(f"{index + 1}. {animal.species} [{animal.id}]")
         animal_selected = animal.species.lower()
     if choice == "4":
         for index, animal in enumerate(gold_dust_day_gecko_collection):
-            print(f"{index + 1}. {animal.species} {animal.id}")
+            print(f"{index + 1}. {animal.species} [{animal.id}]")
         animal_selected = animal.species.lower()
     if choice == "5":
         for index, animal in enumerate(nene_goose_collection):
-            print(f"{index + 1}. {animal.species} {animal.id}")
+            print(f"{index + 1}. {animal.species} [{animal.id}]")
         animal_selected = animal.species.lower()
     if choice == "6":
         for index, animal in enumerate(kikakapu_collection):
-            print(f"{index + 1}. {animal.species} {animal.id}")
+            print(f"{index + 1}. {animal.species} [{animal.id}]")
         animal_selected = animal.species.lower()
     if choice == "7":
         for index, animal in enumerate(opeapea_collection):
-            print(f"{index + 1}. {animal.species} {animal.id}")
+            print(f"{index + 1}. {animal.species} [{animal.id}]")
         animal_selected = animal.species.lower()
     if choice == "8":
         for index, animal in enumerate(hawaiian_happy_faced_spider_collection):
-            print(f"{index + 1}. {animal.species} {animal.id}")
+            print(f"{index + 1}. {animal.species} [{animal.id}]")
         animal_selected = animal.species.lower()
     option = input("> ")
 
