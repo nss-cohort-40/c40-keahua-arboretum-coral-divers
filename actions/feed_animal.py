@@ -9,8 +9,9 @@ from animals import Ulae
 
 
 def feed_animal(arboretum):
-    pueo = Pueo()
-    river_dolphin = RiverDolphin()
+    # pueo = Pueo()
+    # river_dolphin = RiverDolphin()
+    # ulae = Ulae()
 
     print("+-++-++-++-++-++-++-++-++-++-")
     print("+ F E E D  A N  A N I M A L +")
