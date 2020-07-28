@@ -19,10 +19,11 @@ class Forest(Biome, Flying):
                     raise AttributeError(
                         'Cannot add non-terrestrial animal to a forest')
             else:
+                animal_accepted = False
+                return animal_accepted
                 raise AttributeError('Too many animals in this forest!')
         except AttributeError as err:
-            print(f'Cannot add animal! {err}')
-
+            print(err)
             input('Press enter to continue...')
 
     def add_plant(self, plant):
