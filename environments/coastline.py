@@ -17,8 +17,9 @@ class Coastline(Biome):
                     raise AttributeError(
                         'Cannot add non-aquatic or freshwater animals to a coastline!')
             else:
+                animal_accepted = False
+                return animal_accepted
                 raise AttributeError('Too many animals in this coastline!')
         except AttributeError as err:
-            print(f'Cannot add animal! {err}')
-
+            print(err)
             input('Press enter to continue...')
