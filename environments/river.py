@@ -23,7 +23,6 @@ class River(Biome):
             else:
                 animal_accepted = False
                 return animal_accepted
-                raise AttributeError('The river has already reached capacity!')
         except AttributeError as err:
             print(err)
             input('Press enter to continue')

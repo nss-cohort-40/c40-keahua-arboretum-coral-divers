@@ -19,7 +19,6 @@ class Coastline(Biome):
             else:
                 animal_accepted = False
                 return animal_accepted
-                raise AttributeError('Too many animals in this coastline!')
         except AttributeError as err:
             print(err)
             input('Press enter to continue...')

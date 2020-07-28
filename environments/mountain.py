@@ -19,7 +19,6 @@ class Mountain(Biome):
             else:
                 animal_accepted = False
                 return animal_accepted
-                raise AttributeError('Too many animals on this mountain!')
         except AttributeError as err:
             print(err)
             input('Press enter to continue...')

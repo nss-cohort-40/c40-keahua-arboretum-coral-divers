@@ -19,7 +19,6 @@ class Swamp(Biome, Stagnant):
             else:
                 animal_accepted = False
                 return animal_accepted
-                raise AttributeError('Too many animals in this swamp!')
         except AttributeError as err:
             print(err)
             input('Press enter to continue...')
