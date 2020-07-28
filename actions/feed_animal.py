@@ -24,8 +24,7 @@ def feed_animal(arboretum):
     print("7. Ope\'ape\'a")
     print("8. Hawaiian Happy-Faced Spider")
     print("")
-    print("Choose animal to feed.")
-    choice = input("> ")
+    choice = input("Choose animal to feed. > ")
 
     animal_collection = []
     river_dolphin_collection = []
