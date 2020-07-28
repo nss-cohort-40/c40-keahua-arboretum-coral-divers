@@ -4,7 +4,7 @@ from .biome import Biome
 class River(Biome):
 
     def __init__(self):
-        Biome.__init__(self, "River", 6, 1, "Fresh Water")
+        Biome.__init__(self, "River", 6, 12, "Fresh Water")
 
     def add_animal(self, animal):
         try:
@@ -23,7 +23,6 @@ class River(Biome):
             else:
                 animal_accepted = False
                 return animal_accepted
-                raise AttributeError('The river has already reached capacity!')
         except AttributeError as err:
             print(err)
             input('Press enter to continue')

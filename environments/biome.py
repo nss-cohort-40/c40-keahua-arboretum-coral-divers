@@ -2,6 +2,7 @@ from attributes import ContainsAnimals
 from attributes import ContainsPlants
 from attributes import Identifiable
 
+
 class Biome(ContainsAnimals, ContainsPlants, Identifiable):
 
     def __init__(self, name, plant_capacity, animal_capacity, characteristics):
@@ -12,6 +13,6 @@ class Biome(ContainsAnimals, ContainsPlants, Identifiable):
         self.plant_capacity = plant_capacity
         self.animal_capacity = animal_capacity
         self.characteristics = characteristics
-    
+
     def __str__(self):
         return f'{self.name}'

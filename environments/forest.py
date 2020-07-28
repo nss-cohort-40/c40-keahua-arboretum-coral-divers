@@ -21,7 +21,6 @@ class Forest(Biome, Flying):
             else:
                 animal_accepted = False
                 return animal_accepted
-                raise AttributeError('Too many animals in this forest!')
         except AttributeError as err:
             print(err)
             input('Press enter to continue...')
