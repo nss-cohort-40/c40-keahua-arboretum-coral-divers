@@ -48,6 +48,7 @@ def build_biome_choices(animal, arboretum, animal_accepted):
     if animal_accepted == False:
         print("****   That biome is not large enough   ****")
         print("****     Please choose another one      ****")
+        print("")
     available_biomes = list()
     for (key, value) in arboretum.__dict__.items():
         if type(value) is list:
