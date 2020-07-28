@@ -27,12 +27,12 @@ def build_menu():
         "\u001b[47m\u001b[30;1m+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++")
     print("+ K  e  a  h  u  a    A  r  b  o  r  e  t  u  m +")
     print("+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++\u001b[0m\n")
-    print("\u001b[32m1. Annex Habitat")
-    print("2. Release Animal into Habitat")
-    print("3. Feed Animal")
-    print("4. Add Plant to Habitat")
-    print("5. Display Facility Report")
-    print("6. Exit\u001b[0m")
+    print("\u001b[32m1. Annex Habitat 🏞")
+    print("2. Release Animal 🐬 into Habitat")
+    print("3. Feed Animal 🐠")
+    print("4. Add Plant 🌺 to Habitat")
+    print("5. Display Facility Report 📈")
+    print("6. Exit 🚪\u001b[0m")
 
 
 def main_menu():
