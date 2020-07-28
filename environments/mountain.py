@@ -4,7 +4,7 @@ from .biome import Biome
 class Mountain(Biome):
 
     def __init__(self):
-        Biome.__init__(self, "Mountain", 4, 1, "High Elevation")
+        Biome.__init__(self, "Mountain", 4, 6, "High Elevation")
 
     def add_animal(self, animal):
         try:
