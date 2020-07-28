@@ -5,7 +5,7 @@ from .biome import Biome
 class Mountain(Biome):
 
     def __init__(self):
-        Biome.__init__(self, "Mountain", 4, 6, "High Elevation")
+        Biome.__init__(self, "Mountain", 4, 1, "High Elevation")
 
     def add_animal(self, animal):
         try:
@@ -17,10 +17,11 @@ class Mountain(Biome):
                 else:
                     raise AttributeError('Cannot add aquatic animals to a mountain environment.')
             else:
+                animal_accepted = False
+                return animal_accepted
                 raise AttributeError('Too many animals on this mountain!')
         except AttributeError as err:
-            print(f'Cannot add animal! {err}')
-
+            print(err)
             input('Press enter to continue...')
 
     def add_plant(self, plant):

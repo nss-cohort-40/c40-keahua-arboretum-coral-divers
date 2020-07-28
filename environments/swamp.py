@@ -17,10 +17,11 @@ class Swamp(Biome, Stagnant):
                 else:
                     raise AttributeError('Cannot add non-aquatic or saltwater animals to a swamp')
             else:
+                animal_accepted = False
+                return animal_accepted
                 raise AttributeError('Too many animals in this swamp!')
         except AttributeError as err:
-            print(f'Cannot add animal! {err}')
-
+            print(err)
             input('Press enter to continue...')
 
     def add_plant(self, plant):
