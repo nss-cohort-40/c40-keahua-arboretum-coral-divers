@@ -4,7 +4,7 @@ from attributes import Stagnant
 
 class BlueJadeVine(Plant, Terrestrial, Stagnant):
     def __init__(self):
-        Plant.__init__(self, "BlueJadeVine", {"Grassland", "Swamp"}, "partial", 0, "medium")
+        Plant.__init__(self, "Blue Jade Vine", {"Grassland", "Swamp"}, "partial", 0, "medium")
         Terrestrial.__init__(self)
         Stagnant.__init__(self)
 

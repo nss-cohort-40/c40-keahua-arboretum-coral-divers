@@ -26,7 +26,7 @@ class Mountain(Biome):
     def add_plant(self, plant):
         try:
             if len(self.plants) < self.plant_capacity:
-                if plant.sunlight.lower() == "partial":
+                if plant.sunlight.lower() == "partial" and plant.insecticide_resistance.lower() == "high":
                     self.plants.append(plant)
                     print(f'{plant.species} was added to the mountain!')
                     input('Press enter to continue...')
