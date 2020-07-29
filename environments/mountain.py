@@ -10,16 +10,16 @@ class Mountain(Biome):
         try:
             if len(self.animals) < self.animal_capacity:
                 if hasattr(animal, "is_mammal") and hasattr(animal,"wing_count"):
-                    if animal.age > animal.minimum_release_age:
+                    if animal.age >= animal.minimum_release_age:
                         self.animals.append(animal)
-                        print(f'{animal.species} was added to the mountain!')
+                        print(f'{animal.species} [{animal.id}] was added to the mountain!')
                         input('Please press enter to continue...')
                     else:
-                        raise ArithmeticError(f'{animal.species} is only {animal.age} months old.  That\'s too young to be released!')
+                        raise ArithmeticError(f'{animal.species} [{animal.id}] is only {animal.age} months old.  That\'s too young to be released!')
                 else:
-                    raise AttributeError(f'{animal.species} cannot live on a mountain!')
+                    raise AttributeError(f'{animal.species} [{animal.id}] cannot live on a mountain!')
             else:
-                raise Exception(f'Not enough room for this {animal.species}!')
+                raise Exception(f'Not enough room for {animal.species} [{animal.id}]!')
         except (ArithmeticError, AttributeError, Exception) as err:
             print(err)
             raise

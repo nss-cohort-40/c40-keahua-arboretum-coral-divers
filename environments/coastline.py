@@ -10,16 +10,16 @@ class Coastline(Biome):
         try:
             if len(self.animals) < self.animal_capacity:
                 if (hasattr(animal, 'cell_type') and animal.cell_type == "hypotonic") or hasattr(animal, 'is_euryhaline'):
-                    if animal.age > animal.minimum_release_age:
+                    if animal.age >= animal.minimum_release_age:
                         self.animals.append(animal)
-                        print(f'{animal.species} was added to the coastline!')
+                        print(f'{animal.species} [{animal.id}] was added to the coastline!')
                         input('Please press enter to continue...')
                     else:
-                        raise ArithmeticError(f'{animal.species} is only {animal.age} months old.  That\'s too young to be released!')
+                        raise ArithmeticError(f'{animal.species} [{animal.id}] is only {animal.age} months old.  That\'s too young to be released!')
                 else:
-                    raise AttributeError(f'{animal.species} cannot live on a coastline!')
+                    raise AttributeError(f'{animal.species} [{animal.id}] cannot live on a coastline!')
             else:
-                raise Exception(f'Not enough room for this {animal.species}!')
+                raise Exception(f'Not enough room for {animal.species} [{animal.id}]!')
         except (ArithmeticError, AttributeError, Exception) as err:
             print(err)
             raise
