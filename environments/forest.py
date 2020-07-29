@@ -7,7 +7,6 @@ class Forest(Biome, Flying):
     def __init__(self):
         Biome.__init__(self, "Forest", 32, 20, {"Rainy", "Shady"})
         Flying.__init__(self)
-       
 
     def add_animal(self, animal):
         try:
@@ -17,11 +16,11 @@ class Forest(Biome, Flying):
                     print(f'{animal.species} was added to the forest!')
                     input('Please press enter to continue...')
                 else:
-                    raise AttributeError('Cannot add non-terrestrial animal to a forest')
+                    raise AttributeError(
+                        'Cannot add non-terrestrial animal to a forest')
             else:
                 animal_accepted = False
                 return animal_accepted
-                raise AttributeError('Too many animals in this forest!')
         except AttributeError as err:
             print(err)
             input('Press enter to continue...')
